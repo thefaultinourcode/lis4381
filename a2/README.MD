@@ -1,5 +1,10 @@
 ##NOTE: *Be sure* that this README.md file contains Markdown language, as well as the following items:
 
++ Course name term a/pn (where n indicates assignment/project number)
++ Student name
++ Assignment requirements
++ Link to your Web site
+
 ###LIS4381 Mobile Apps fall15 a2
 ###Leah Ramsier
 ###Deliverables: 
@@ -11,11 +16,6 @@
 ###Link:
 [My Website](http://leaherynramsier.com/lis4381/a2/index.php "Leah's Page")
 
-
-+ Course name term a/pn (where n indicates assignment/project number)
-+ Student name
-+ Assignment requirements
-+ Link to your Web site
 
 The initial starter files included are to be manipulated for Mobile-First design.
 
