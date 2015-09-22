@@ -12,10 +12,10 @@
 [My Website](http://leaherynramsier.com/lis4381/a2/index.php "Leah's Page")
 
 
-Course name term a/pn (where n indicates assignment/project number)
-Student name
-Assignment requirements
-Link to your Web site
++Course name term a/pn (where n indicates assignment/project number)
++Student name
++Assignment requirements
++Link to your Web site
 
 The initial starter files included are to be manipulated for Mobile-First design.
 
