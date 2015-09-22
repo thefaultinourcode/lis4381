@@ -11,8 +11,8 @@
 1. Provide Bitbucket read-only access to lis4381 repo (Language HTML/CSS), include
 *all* files, as well as README.md, using Markdown syntax
 2. Links:
-* Your Bitbucket repo
-* Your Web site (displaying your a2 assignment, linked to *all* course assignments/project) from your Web host
++ Your Bitbucket repo
++ Your Web site (displaying your a2 assignment, linked to *all* course assignments/project) from your Web host
 ###Link:
 [My Website](http://leaherynramsier.com/lis4381/a2/index.php "Leah's Page")
 
