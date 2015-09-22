@@ -1,9 +1,8 @@
-##NOTE: *Be sure* that this README.md file contains Markdown language, as
-well as the following items:
+##NOTE: *Be sure* that this README.md file contains Markdown language, as well as the following items:
 
- ### LIS4381 Mobile Apps fall15 a2
- ### Leah Ramsier
- ### Deliverables: 
+ ###LIS4381 Mobile Apps fall15 a2
+ ###Leah Ramsier
+ ###Deliverables: 
 1. Provide Bitbucket read-only access to lis4381 repo (Language HTML/CSS), include
 *all* files, as well as README.md, using Markdown syntax
 2. Links:
