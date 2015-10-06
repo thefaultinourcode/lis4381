@@ -1,11 +1,12 @@
-<<<<<<< HEAD
-NOTE: *Be sure* that this README.md file contains Markdown language, as
-well as the following items:
+##NOTE: *Be sure* that this README.md file contains Markdown language, as well as the following items:
 
-Course name term a/pn (where n indicates assignment/project number)
-Student name
-Assignment requirements
-Link to your Web site
+###LIS4381 Mobile Apps fall15 a3
+###Leah Ramsier
+###Deliverables: A3 requirements
+
+[My Website](http://leaherynramsier.com/lis4381/a2/index.php)
+
+![A3 ERD Requirements](https://bitbucket.org/lramsier/lis4381/raw/master/a3/images/a3.png "A3 ERD") 
 
 The initial starter files included are to be manipulated for Mobile-First design.
 
