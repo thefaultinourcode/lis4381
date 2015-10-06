@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,18 @@
 	<meta name="author" content="Mark K. Jowett, Ph.D.">
     <link rel="icon" href="favicon.ico">
 
-		<title>CRSXXXX - Assignment2</title>		
+		<title>LIS4381 - Assignment 3</title>		
+=======
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="My online portfolio that illustrates skills acquired while working through various project requirements.">
+	<meta name="author" content="Your name here!">
+	<link rel="icon" href="favicon.ico">
+
+	<title>My Online Portfolio</title>
+>>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -26,6 +38,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+<<<<<<< HEAD
   </head>
 
   <body>
@@ -38,72 +51,117 @@
 					<?php include_once("global/header.php"); ?>	
 				</div>
 
-				<!-- Start form-building -->
-<!--
-Standard rules for all Bootstrap form layouts:
-Always use <form role="form"> (helps improve accessibility for people using screen readers)
-Wrap labels and form controls in <div class="form-group"> (needed for optimum spacing)
-Add class .form-control to all textual <input>, <textarea>, and <select> elements
-
-<label> element does not render anything special for user.
-However, it provides usability improvement for mouse users:
-if user clicks on text within <label> element, it toggles control.
-
-"for" attribute specifies which form element a label is bound to.
-Should be equal to id attribute of related element to bind them together.
-
-A label can be bound to an element either by using "for" attribute, or by placing element inside <label> element.
--->				
-				<h2>Horizontal form</h2>
-				<form class="form-horizontal" role="form" method="post" action="process.php">
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="fname">First Name:</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" name="fname" id="fname" placeholder="Enter first name">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="lname">Last Name:</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" name="lname" id="lname" placeholder="Enter last name">
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="email">Email:</label>
-						<div class="col-sm-10">
-							<input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="pwd">Password:</label>
-						<div class="col-sm-10">          
-							<input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password">
-						</div>
-					</div>
-				
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="comments">Comments:</label>
-						<div class="col-sm-10">          
-							<textarea class="form-control" rows="3" name="comments" id="comments" placeholder="Enter comments"></textarea>
-						</div>
-					</div>
-
-					<div class="form-group">        
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Submit</button>
-						</div>
-					</div>
-				</form>
-				<!-- End form-building -->
+<img src="images/a3.png" class="img-responsive center-block"/><br/>
 				
   <?php include_once "global/footer.php"; ?>
 
 		</div> <!-- starter-template -->
     </div> <!-- end container -->
+=======
+<!-- Carousel styles -->
+<style type="text/css">
+h2
+{
+	margin: 0;     
+	color: #666;
+	padding-top: 90px;
+	font-size: 52px;
+	font-family: "trebuchet ms", sans-serif;    
+}
+.item
+{
+	background: #333;    
+	text-align: center;
+	height: 300px !important;
+}
+.carousel
+{
+  margin: 20px 0px 20px 0px;
+}
+.bs-example
+{
+  margin: 20px;
+}
+</style>
+
+
+</head>
+<body>
+
+	<?php include_once("global/nav_global.php"); ?>
+	
+	<div class="container">
+		 <div class="starter-template">
+						<div class="page-header">
+							<?php include_once("global/header.php"); ?>	
+						</div>
+
+<!-- Start Bootstrap Carousel  -->
+<div class="bs-example">
+	<div
+      id="myCarousel"
+		class="carousel"
+		data-interval="1000"
+		data-pause="hover"
+		data-wrap="true"
+		data-keyboard="true"			
+		data-ride="carousel">
+		
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+       <!-- Carousel items -->
+        <div class="carousel-inner">
+
+          <div class="active item">
+                <h2>Slide 1</h2>
+                <div class="carousel-caption">
+                  <h3>First slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						 <img src="images/slide1.png" alt="Slide 1">
+                </div>
+            </div>
+
+            <div class="item">
+                <h2>Slide 2</h2>                <div class="carousel-caption">
+                  <h3>Second slide label</h3>
+                  <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+						 <img src="images/slide2.png" alt="Slide 2">									
+                </div>
+            </div>
+
+            <div class="item">
+                <h2>Slide 3</h2>
+                <div class="carousel-caption">
+                  <h3>Third slide label</h3>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+						 <img src="images/slide3.png" alt="Slide 3">									
+                </div>
+            </div>
+
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+<!-- End Bootstrap Carousel  -->
+
+
+<?php
+include_once "global/footer.php";
+?>
+
+	</div> <!-- end starter-template -->
+</div> <!-- end container -->
+>>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
 
     <!-- Bootstrap core JavaScript: jQuery necessary for Bootstrap's JavaScript plugins
     ================================================== -->
@@ -113,7 +171,14 @@ A label can be bound to an element either by using "for" attribute, or by placin
 		<!-- Latest compiled and minified JavaScript -->
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<<<<<<< HEAD
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
+=======
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+>>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
 </html>
