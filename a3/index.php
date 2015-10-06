@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,7 @@
     <link rel="icon" href="favicon.ico">
 
 		<title>LIS4381 - Assignment 3</title>		
-=======
+
 <head>
 <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,7 @@
 	<link rel="icon" href="favicon.ico">
 
 	<title>My Online Portfolio</title>
->>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
+
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -38,7 +37,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-<<<<<<< HEAD
+
   </head>
 
   <body>
@@ -57,7 +56,7 @@
 
 		</div> <!-- starter-template -->
     </div> <!-- end container -->
-=======
+
 <!-- Carousel styles -->
 <style type="text/css">
 h2
@@ -96,63 +95,6 @@ h2
 							<?php include_once("global/header.php"); ?>	
 						</div>
 
-<!-- Start Bootstrap Carousel  -->
-<div class="bs-example">
-	<div
-      id="myCarousel"
-		class="carousel"
-		data-interval="1000"
-		data-pause="hover"
-		data-wrap="true"
-		data-keyboard="true"			
-		data-ride="carousel">
-		
-    	<!-- Carousel indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>   
-       <!-- Carousel items -->
-        <div class="carousel-inner">
-
-          <div class="active item">
-                <h2>Slide 1</h2>
-                <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						 <img src="images/slide1.png" alt="Slide 1">
-                </div>
-            </div>
-
-            <div class="item">
-                <h2>Slide 2</h2>                <div class="carousel-caption">
-                  <h3>Second slide label</h3>
-                  <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-						 <img src="images/slide2.png" alt="Slide 2">									
-                </div>
-            </div>
-
-            <div class="item">
-                <h2>Slide 3</h2>
-                <div class="carousel-caption">
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-						 <img src="images/slide3.png" alt="Slide 3">									
-                </div>
-            </div>
-
-        </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
-</div>
-<!-- End Bootstrap Carousel  -->
 
 
 <?php
@@ -161,7 +103,7 @@ include_once "global/footer.php";
 
 	</div> <!-- end starter-template -->
 </div> <!-- end container -->
->>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
+
 
     <!-- Bootstrap core JavaScript: jQuery necessary for Bootstrap's JavaScript plugins
     ================================================== -->
@@ -171,14 +113,14 @@ include_once "global/footer.php";
 		<!-- Latest compiled and minified JavaScript -->
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<<<<<<< HEAD
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
-=======
+
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
->>>>>>> 9810f27f7ce8ff262dfaa7f87b5a61441ba20888
+
 </html>
