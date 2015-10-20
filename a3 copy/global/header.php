@@ -1,4 +1,4 @@
-<h1>Assignment 3</h1>
-    <h3>Database Design</h3>
-      <p class="lead">Database for the remaining LIS4381 assignments and projects.</p>
-
+<h1>Project 1</h1>
+    <h3>Basic client-side validation</h3>
+    <p class="lead">This project uses Bootstrap client-side validation</p>
+     (Table: petstore)

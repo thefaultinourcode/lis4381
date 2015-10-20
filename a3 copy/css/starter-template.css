@@ -1,17 +1,7 @@
-body
-{
+body {
   padding-top: 50px;
 }
-.starter-template
-{
-  padding: 0px 15px;
+.starter-template {
+  padding: 40px 15px;
   text-align: center;
-}
-h1
-{
-	margin: 0px;     
-	color: #666;
-	padding: 0px;
-	font-size: 48px;
-	font-family: "trebuchet ms", sans-serif;    
 }
