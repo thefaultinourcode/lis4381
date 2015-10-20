@@ -62,7 +62,39 @@ h2
 		 <div class="starter-template">
 						<div class="page-header">
 							<?php include_once("global/header.php"); ?>	
+
+<h2>Calculator</h2>
+				<form class="form-horizontal" role="form" method="post" action="process.php">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="fname">Num1</label>
+						<div class="col-sm-10">
+							<input type="number" class="form-control" name="num1" id="num1" placeholder="Enter a number">
 						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="lname">Num2:</label>
+						<div class="col-sm-10">
+							<input type="number" class="form-control" name="num2" id="num2" placeholder="Enter a number">
+						</div>
+					</div>
+					
+					
+						addition <input type="radio" name="arthimetic" id="addition" placeholder="Enter a number">
+						subtraction <input type="radio" name="arthimetic" id="subtraction" placeholder="Enter a number">
+						multiplication <input type="radio" name="arthimetic" id="multiplication" placeholder="Enter a number">
+						subtraction <input type="radio" name="arithmetic" id="division" placeholder="Enter a number">
+						subtraction <input type="radio" name="arithmetic" id="exponentiation" placeholder="Enter a number">	
+						
+						<div class="form-group">        
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+						</div>
+
+			
+				<!-- End form-building -->
 
 <!-- Start Bootstrap Carousel  -->
 <div class="bs-example">
@@ -121,7 +153,7 @@ h2
     </div>
 </div>
 <!-- End Bootstrap Carousel  -->
-
+-->
 
 <?php
 include_once "global/footer.php";

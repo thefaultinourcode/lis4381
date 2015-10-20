@@ -1,3 +1,24 @@
+<?php 
+  ini_set('display_errors',1);
+  error_reporting(E_ALL);
+
+  //exit(print_r($_POST));
+  //scalar variable
+  $num1 = $_POST['num1'];
+  $num2 = $_POST['num2'];
+  
+/*
+Best practice: sanitize input - prepared statements, and escape output -htmlspecialchars().
+	
+		htmlspecialchars() helps protect against cross-site scripting (XSS).
+		XSS enables attackers to inject client-side script into Web pages viweed by other users
+
+		Note: call htmlspecialchars() when echoing data into HTML.
+		However, don't store escaped HTML in your database.
+		The database should store actual data, not its HTML representation.
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +29,7 @@
 	<meta name="author" content="Mark K. Jowett, Ph.D.">
     <link rel="icon" href="favicon.ico">
 
-		<title>LIS4381 - Assignment2</title>		
+		<title>CRSXXXX - Assignment2</title>		
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -30,7 +51,10 @@
 
   <body>
 
-  <?php include_once("../global/nav.php"); ?>
+  <?php 
+
+
+  include_once("global/nav.php"); ?>
 	
 		<div class="container">
 			<div class="starter-template">
@@ -58,45 +82,41 @@ A label can be bound to an element either by using "for" attribute, or by placin
 				<form class="form-horizontal" role="form" method="post" action="process.php">
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fname">First Name:</label>
+						<label class="control-label col-sm-2" for="fname">Num1:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="fname" id="fname" placeholder="Enter first name">
+							<input type="text" class="form-control" name="num1" id="num1" value="<?php echo htmlspecialchars($fname); ?>">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="lname">Last Name:</label>
+						<label class="control-label col-sm-2" for="lname">Num2:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="lname" id="lname" placeholder="Enter last name">
+							<input type="text" class="form-control" name="num2" id="num2" value="<?php echo htmlspecialchars($lname); ?>">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="email">Email:</label>
-						<div class="col-sm-10">
-							<input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-						</div>
+						
+							<input type="email" class="form-control" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
+						
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="pwd">Password:</label>
-						<div class="col-sm-10">          
-							<input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password">
-						</div>
+						      
+							<input type="password" class="form-control" name="pwd" id="pwd" value="<?php echo htmlspecialchars($pwd); ?>">
+						
 					</div>
 				
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="comments">Comments:</label>
-						<div class="col-sm-10">          
-							<textarea class="form-control" rows="3" name="comments" id="comments" placeholder="Enter comments"></textarea>
-						</div>
+						        
+							<textarea class="form-control" rows="3" name="comments" id="comments"><?php echo htmlspecialchars($comments);?> </textarea>
+					
 					</div>
 
-					<div class="form-group">        
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Submit</button>
-						</div>
-					</div>
+					
 				</form>
 				<!-- End form-building -->
 				

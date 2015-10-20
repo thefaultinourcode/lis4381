@@ -6,6 +6,6 @@
 
 [My Website](http://leaherynramsier.com/lis4381/a3/index.php)
 
-![A3 ERD Requirements](https://bitbucket.org/lramsier/lis4381/raw/master/a3/images/a3.png "A3 ERD") 
+![A3 ERD Requirements](images/a3.png "A3 ERD") 
 
 
