@@ -6,7 +6,7 @@
   //scalar variable
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
-  
+  $arithmetic = isset($_POST['arithmetic']);
 /*
 Best practice: sanitize input - prepared statements, and escape output -htmlspecialchars().
 	
@@ -52,7 +52,7 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
   <body>
 
   <?php 
-
+	
 
   include_once("global/nav.php"); ?>
 	
@@ -62,63 +62,23 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 					<?php include_once("global/header.php"); ?>	
 				</div>
 
-				<!-- Start form-building -->
-<!--
-Standard rules for all Bootstrap form layouts:
-Always use <form role="form"> (helps improve accessibility for people using screen readers)
-Wrap labels and form controls in <div class="form-group"> (needed for optimum spacing)
-Add class .form-control to all textual <input>, <textarea>, and <select> elements
+<?php
+$answer=0;
+if($arithmetic == "addition") {
+	$answer = $num1 + $num1;
+	echo $num1;
+	echo $num1 . " + " . $num2 . " = " . $answer;
+}
+elseif ($arithmetic == "subtraction"){
+	$answer = $num1 - $num1;
+	echo $num1 . " - " . $num2 . " = " . $answer;
+}
+elseif ($arithmetic == "multiplication") {
+	# code...
+}
+echo $answer;
+?>
 
-<label> element does not render anything special for user.
-However, it provides usability improvement for mouse users:
-if user clicks on text within <label> element, it toggles control.
-
-"for" attribute specifies which form element a label is bound to.
-Should be equal to id attribute of related element to bind them together.
-
-A label can be bound to an element either by using "for" attribute, or by placing element inside <label> element.
--->				
-				<h2>Horizontal form</h2>
-				<form class="form-horizontal" role="form" method="post" action="process.php">
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="fname">Num1:</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" name="num1" id="num1" value="<?php echo htmlspecialchars($fname); ?>">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="lname">Num2:</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" name="num2" id="num2" value="<?php echo htmlspecialchars($lname); ?>">
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="email">Email:</label>
-						
-							<input type="email" class="form-control" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
-						
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="pwd">Password:</label>
-						      
-							<input type="password" class="form-control" name="pwd" id="pwd" value="<?php echo htmlspecialchars($pwd); ?>">
-						
-					</div>
-				
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="comments">Comments:</label>
-						        
-							<textarea class="form-control" rows="3" name="comments" id="comments"><?php echo htmlspecialchars($comments);?> </textarea>
-					
-					</div>
-
-					
-				</form>
-				<!-- End form-building -->
 				
   <?php include_once "global/footer.php"; ?>
 

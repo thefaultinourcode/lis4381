@@ -81,11 +81,11 @@ h2
 					</div>
 					
 					
-						addition <input type="radio" name="arthimetic" id="addition" placeholder="Enter a number">
-						subtraction <input type="radio" name="arthimetic" id="subtraction" placeholder="Enter a number">
-						multiplication <input type="radio" name="arthimetic" id="multiplication" placeholder="Enter a number">
-						subtraction <input type="radio" name="arithmetic" id="division" placeholder="Enter a number">
-						subtraction <input type="radio" name="arithmetic" id="exponentiation" placeholder="Enter a number">	
+						<input type="radio" name="arthimetic" value="addition" id="addition" > addition
+						<input type="radio" name="arthimetic" value="subtraction" id="subtraction" > subtraction 
+						<input type="radio" name="arthimetic" value="multiplication" id="multiplication" > multiplication 
+						<input type="radio" name="arithmetic" value="division" id="division" > division
+						<input type="radio" name="arithmetic" value="exponentiation" id="exponentiation" >	exponentiation
 						
 						<div class="form-group">        
 						<div class="col-sm-offset-2 col-sm-10">

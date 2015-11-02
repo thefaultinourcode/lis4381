@@ -1,11 +1,13 @@
 <?php 
   ini_set('display_errors',1);
   error_reporting(E_ALL);
-
+  include_once('person.php');
   //exit(print_r($_POST));
   //scalar variable
   $fname = $_POST['fname'];
   $lname = $_POST['lname'];
+
+ 
 /*
 Best practice: sanitize input - prepared statements, and escape output -htmlspecialchars().
 	
@@ -60,12 +62,19 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 				<div class="page-header">
 					<?php include_once("global/header.php"); ?>	
 				</div>
-<?php
-	$person = new Person($fname, $lname);
-	echo "<p>Creating " . $fname . " " . $lname . " person object from parameterized constructors (accepts two arguemnts).</p>";
-?>
-	<h2>Simple Person Class</h2>
 
+<h2>Simple Person Class</h2>
+
+<?php
+	include_once('person.php');
+	$default = new Person();
+	echo "<p>Creating " . "<strong>" . $fname . " " . $lname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
+	$dfname = $default->getFname();
+	$dlname = $default->getLname();
+	echo "<p>Creating " . "<strong>" . $dfname . " " . $dlname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
+	echo "<br>";
+?>
+	
 				
   <?php include_once "global/footer.php"; ?>
 

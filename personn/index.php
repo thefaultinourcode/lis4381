@@ -56,51 +56,50 @@ h2
 </head>
 <body>
 
+	<?php include_once("../global/nav_global.php"); ?>
+	
+	<div class="container">
+		 <div class="starter-template">
+						<div class="page-header">
+							<?php include_once("global/header.php"); ?>	
+						</div>
 
 <?php
-
-class Person{
-
-	private $fname;
-
-	public function SetFname($newFname){
-		$this->fname = $newFname;
-	}
-
-	public function SetLname ($newLname){
-		$this->lname = $newLname;
-	}
-	
-	//GetFname 
-	public function GetFname(){
-		return $this->fname;
-	}
-	//GetLname 
-	public function GetLname(){
-		return $this->lname;
-	}
-
-	public function __construct($newFname="Emma", $newLname="Woodhouse"){
-		$this->fname = $newFname;
-		$this->lname = $newLname;		
-	}
-
-}
-
-$leah = new Person("Lea","Ramseier");
-$leah->setFname("Leah");
-//echo $leah->getFname();
-$leah->setLname("Ramsier");
-//echo $leah->getLname();
-
-$emma = new Person("Emma","Woodhouse");
-//echo $emma->getFname();
-//echo $emma->getLname();
+include_once("person.php");
 
 ?>
 
+<h2>Simple Person Class</h2>
+				<form class="form-horizontal" role="form" method="post" action="process.php">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="fname">FName:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="fname" id="fname" placeholder="Enter first name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="lname">LName:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="lname" id="lname" placeholder="Enter last name">
+						</div>
+					</div>
+
+					<div class="form-group">        
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+				</form>
 
 
+<?php
+include_once "global/footer.php";
+?>
+
+	</div> <!-- end starter-template -->
+</div> <!-- end container -->
 
     <!-- Bootstrap core JavaScript: jQuery necessary for Bootstrap's JavaScript plugins
     ================================================== -->
