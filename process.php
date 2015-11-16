@@ -6,7 +6,7 @@
   //scalar variable
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
-  $arithmetic = isset($_POST['arithmetic']);
+  $arithmetic = $_POST['arithmetic'];
 /*
 Best practice: sanitize input - prepared statements, and escape output -htmlspecialchars().
 	
@@ -76,7 +76,9 @@ elseif ($arithmetic == "subtraction"){
 elseif ($arithmetic == "multiplication") {
 	# code...
 }
-echo $answer;
+elseif($arithmetic == "division"){
+	
+}
 ?>
 
 				

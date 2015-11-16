@@ -82,18 +82,23 @@ class Person{
 
 	public function __construct($newFname="Emma", $newLname="Woodhouse"){
 		$this->fname = $newFname;
-		$this->lname = $newLname;		
+		$this->lname = $newLname;	
+		echo "Creating <strong>" . $this->fname . " " . $this->lname . " </strong> person object from parameterized constructors <br/>";	
+	}
+
+	public function __destruct(){
+		echo "Destroying <strong> " . $this->fname . " " . $this->lname . " </strong> person object <br/>";
 	}
 
 }
 
-$leah = new Person("Lea","Ramseier");
-$leah->setFname("Leah");
+//$leah = new Person("Lea","Ramseier");
+//$leah->setFname("Leah");
 //echo $leah->getFname();
-$leah->setLname("Ramsier");
+//$leah->setLname("Ramsier");
 //echo $leah->getLname();
 
-$emma = new Person("Emma","Woodhouse");
+//$emma = new Person("Emma","Woodhouse");
 //echo $emma->getFname();
 //echo $emma->getLname();
 

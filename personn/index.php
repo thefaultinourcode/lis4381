@@ -86,6 +86,14 @@ include_once("person.php");
 						</div>
 					</div>
 
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="age">Age:</label>
+						<div class="col-sm-10">
+							<input type="number" class="form-control" name="age" id="age" placeholder="age">
+						</div>
+					</div>
+
 					<div class="form-group">        
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-default">Submit</button>

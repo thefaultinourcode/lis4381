@@ -23,7 +23,7 @@ $pst_url_v = $_POST['pst_url'];
 $pst_ytd_sales_v = $_POST['pst_ytd_sales'];
 $pst_notes_v = $_POST['pst_notes'];
 
-var_dump($_POST);
+//var_dump($_POST);
 
 echo $pst_street_v;
 echo $pst_city_v;
@@ -70,7 +70,7 @@ empty($pst_url_v) ||
 	)
 
 {
-	$error= "All fields require data, except <b>Notes</b>. Check all fields and try again.";
+	$error = "All fields require data, except <b>Notes</b>. Check all fields and try again.";
 	include('global/error.php');
 }
 else if (!is_numeric($pst_ytd_sales_v) || $pst_ytd_sales_v <= 0)

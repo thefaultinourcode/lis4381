@@ -4,8 +4,10 @@
   include_once('person.php');
   //exit(print_r($_POST));
   //scalar variable
+  require_once("person.php");
   $fname = $_POST['fname'];
   $lname = $_POST['lname'];
+  $age = $_POST['age'];
 
  
 /*
@@ -68,14 +70,43 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 <?php
 	include_once('person.php');
 	$default = new Person();
-	echo "<p>Creating " . "<strong>" . $fname . " " . $lname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
+	$userp = new Person($fname, $lname);
+	//echo "<p>Creating " . "<strong>" . $fname . " " . $lname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
 	$dfname = $default->getFname();
 	$dlname = $default->getLname();
-	echo "<p>Creating " . "<strong>" . $dfname . " " . $dlname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
-	echo "<br>";
+	//echo "<p>Creating " . "<strong>" . $dfname . " " . $dlname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
+	//echo "<br>";
 ?>
 	
-				
+		
+<div class="table-responsive">
+	 <table id="myTable" class="table table-striped table-condensed" >
+
+		 <!-- Code displaying PetStore data with Edit/Delete buttons goes here // -->
+	<thead>
+		<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<?php
+?>
+	<tr>
+	<td><?php echo $default->GetFname(); ?></td>
+	<td><?php echo $default->GetLname(); ?></td>
+
+	</tr>
+	<tr><td><?php echo $userp->GetFname(); ?></td>
+	<td><?php echo $userp->GetLname(); ?></td></tr>
+
+
+	 </table>
+ </div>
+
+
+
   <?php include_once "global/footer.php"; ?>
 
 		</div> <!-- starter-template -->
@@ -93,4 +124,3 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-s
