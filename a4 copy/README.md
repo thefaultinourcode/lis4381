@@ -1,14 +1,7 @@
+Required: First, delete these notes, and include YOUR OWN, before pushing
+to your remote repo. This file *must* use Markdown syntax, and provide project
+documentation--otherwise, points *will* be deducted.
 
-##NOTE: *Be sure* that this README.md file contains Markdown language, as well as the following items:
-
-###LIS4381 Mobile Apps fall15 a4
-###Leah Ramsier
-###Deliverables: A4 requirements
-
-1. Display petstore records locally and remotely
-2. Ability to add petstore record to database
-3. Server-side data validation
-
-[My Website A4](http://leaherynramsier.com/lis4381/a4/index.php)
-
+Also, global subdir. is missing header.php and footer.php. You'll need to create
+your own files!  :)
 

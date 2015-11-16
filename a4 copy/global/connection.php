@@ -1,22 +1,22 @@
 <?php
 //comment out next line if using on remote host
-//$IP="local";
+$IP="local";
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 //example:
 if ($IP=="local")
 {
-	$dsn = 'mysql:host=localhost;port=3306;dbname=ler13c';
-	$username = 'root';
-	$password = 'mysql';
+	$dsn = 'mysql:host=localhost;port=3306;dbname=yourdbname';
+	$username = 'yourusername';
+	$password = 'yourpassword';
 }
 
 //contact your Web host for DB connection documentation
 else
 {
-	$dsn = 'mysql:host=localhost;port=3306;dbname=ler13c';
-	$username = 'ler13c';
-	$password = 'password';
+	$dsn = 'mysql:host=localhost;port=3306;dbname=yourdbname';
+	$username = 'yourusername';
+	$password = 'yourpassword';
 }
 
 try 
@@ -31,8 +31,8 @@ catch (PDOException $e)
 	//after testing, create custom error message
   //echo $e->getMessage();  //display error on this page
   $error = $e->getMessage(); 
-  include('error.php'); //display in custom error page (forwarding is faster, one trip to server)
-	//header('Location: error.php'); //sometimes, redirecting is needed (two trips to server)
+	//include('error.php'); //display in custom error page (forwarding is faster, one trip to server)
+	header('Location: error.php'); //sometimes, redirecting is needed (two trips to server)
   exit();
 }
 ?>

@@ -40,7 +40,8 @@
 						<div class="page-header">
 							<h2>MySQL Database Server Information</h2>
 						</div>
-						
+
+<!-- Responsive table.  -->						
 <div class="table-responsive">
 <table id="myTable" class="table table-striped table-condensed" >
 
@@ -76,6 +77,7 @@ include_once "global/footer.php";
 					</div>
 			</div>
 	</div>
+
 	<!-- Bootstrap JavaScript
 	================================================== -->
 	<!-- Placed at end of document so pages load faster -->
@@ -86,13 +88,6 @@ include_once "global/footer.php";
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
-
-				<script>
-	 $(document).ready(function(){
-		 $('#myTable').DataTable({
-		 });
-});
-	</script>
 
 </body>
 </html>

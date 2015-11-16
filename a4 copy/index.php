@@ -1,12 +1,5 @@
 <?php
 //database connection code goes here...
-require_once "global/connection.php";
-
-$query = "SELECT * FROM petstore ORDER BY pst_id";
-
-$statement = $db->prepare($query);
-$statement->execute();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,21 +11,18 @@ $statement->execute();
 	<meta name="author" content="Mark K. Jowett, Ph.D.">
 	<link rel="icon" href="favicon.ico">
 
-	<title>LIS4381 - Assignment4</title>
+	<title>CRSXXXX - AssignmentX</title>
 
 <!-- Include FontAwesome CSS to use feedback icons provided by FontAwesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 
-<!-- Bootstrap for responsive, mobile-first design. -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- Starter template for your own custom styling. -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link href="css/starter-template.css" rel="stylesheet">
 
 <!-- jQuery DataTables: http://www.datatables.net/ //-->
-<link rel="stylesheet" type=""text/css" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
-<link rel="stylesheet" type=""text/css" href="//cdn.datatables.net/responsive/1.0.7/css/dataTables.responsive.css"/>
+<link rel="stylesheet" type=""text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css"/>
+<link rel="stylesheet" type=""text/css" href="//cdn.datatables.net/responsive/1.0.4/css/dataTables.responsive.css"/>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -56,72 +46,12 @@ $statement->execute();
 <a href="add_petstore.php">Add Pet Store</a>
 <br />
 
+<!-- Placeholder for responsive table if needed.  -->
  <div class="table-responsive">
 	 <table id="myTable" class="table table-striped table-condensed" >
 
 		 <!-- Code displaying PetStore data with Edit/Delete buttons goes here // -->
-	<thead>
-		<tr>
-		<th>Name</th>
-		<th>Street</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Zip</th>
-		<th>Phone</th>
-		<th>Email</th>
-		<th>URL</th>
-		<th>YTD Sales</th>
-		<th>Notes</th>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
-		</tr>
-	</thead>
-	<?php
-	$result = $statement->fetch();
-	while($result != null)
-	{
-?>
 
-	<td><?php echo htmlspecialchars($result['pst_name']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_street']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_city']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_state']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_zip']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_phone']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_email']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_url']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_ytd_sales']); ?></td>
-	<td><?php echo htmlspecialchars($result['pst_notes']); ?></td>
-
-	<td>
-		<form
-		onsubmit="return confirm('Do you really want to delete record?');"
-		action="delete_petstore.php"
-		method="post"
-		id="delete_petstore">
-
-		 <input type="hidden" name="pst_id" value="<?php echo $result['pst_id']; ?>" />
-		 <input type="submit" value="Delete"/>
-		</form>
-	</td>
-
-	<td>
-		<form action="edit_petstore.php" method="post" id="edit_petstore">
-
-		<input type="hidden" name="pst_id" value="<?php echo $result['pst_id']; ?>" />
-		<input type="submit" value="Edit" />
-	</form>
-	</td>
-
-</tr>
-
-<?php
-	$result = $statement->fetch();
-}
-$statement->closeCursor();
-$db = null;
-
-?>
 	 </table>
  </div> <!-- end table-responsive -->
  	
@@ -135,34 +65,17 @@ include_once "global/footer.php";
 	<!-- Bootstrap JavaScript
 	================================================== -->
 	<!-- Placed at end of document so pages load faster -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/responsive/1.0.4/js/dataTables.responsive.min.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
 
-			<script>
+	<script>
 	 $(document).ready(function(){
-		 $('#myTable').DataTable({
-	 //permit sorting (i.e., no sorting on last two columns: delete and edit)
-    "columns":
-		[
-      null,
-      null,
-		null,
-		null,
-		null,
-		null,
-		null,
-		null,
-		null,
-		null,
-     { "orderable": false },
-     { "orderable": false }			
-    ]
-		 });
+    $('#myTable').DataTable();
 });
 	</script>
 

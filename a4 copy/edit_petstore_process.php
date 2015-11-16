@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 //use for inital test of form inputs
 //exit(print_r($_POST));
 
-//code to process PetStore inserts goes here
+//code to process PetStore edits goes here
 
 //include('index.php'); //forwarding is faster, one trip to server
 header('Location: index.php'); //sometimes, redirecting is needed (two trips to server)
