@@ -48,82 +48,112 @@
 
 					<h2>Pet Stores</h2>
 
-						<form id="add_store_form" method="POST" class="form-horizontal" action="add_petstore_process.php">
+						<form id="edit_petstore" method="post" class="form-horizontal" action="edit_petstore_process.php">
+								
+						<?php
+							require_once "global/connection.php";
+
+							$pst_id_v = $_POST['pst_id'];
+
+							$query =
+							"select *
+							from petstore
+							where pst_id = :pst_id_p";
+
+							$statement = $db->prepare($query);
+							$statement->bindParam(':pst_id_p', $pst_id_v);
+							$statement->execute();
+							$result = $statement->fetch();
+							while($result != null)
+							{
+						?>
+
+								<input type="hidden" name="pst_id" value="<?php echo $result['pst_id']; ?>" />
+								
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Name:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="30" name="pst_name" placeholder="(max 30 characters)" />
+												<input type="text" class="form-control" maxlength="30" name="pst_name" value="<?php echo $result['pst_name']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Street</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="30" name="pst_street" placeholder="(max 30 characters)" />
+												<input type="text" class="form-control" maxlength="30" name="pst_street" value="<?php echo $result['pst_street']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">City:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="30" name="pst_city" placeholder="(max 30 characters)" />
+												<input type="text" class="form-control" maxlength="30" name="pst_city" value="<?php echo $result['pst_city']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">State:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="2" name="pst_state" placeholder="Example: FL" />
+												<input type="text" class="form-control" maxlength="2" name="pst_state" value="<?php echo $result['pst_state']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Zip:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="9" name="pst_zip" placeholder="(5 or 9 digits no dashes)"/>
+												<input type="text" class="form-control" maxlength="9" name="pst_zip" value="<?php echo $result['pst_zip']; ?>"/>
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Phone:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="10" name="pst_phone" placeholder="(10 digits no other characters)"/>
+												<input type="text" class="form-control" maxlength="10" name="pst_phone" value="<?php echo $result['pst_phone']; ?>"/>
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Email:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="100" name="pst_email" placeholder="Example: lbennet@pandp.net"/>
+												<input type="text" class="form-control" maxlength="100" name="pst_email" value="<?php echo $result['pst_email']; ?>"/>
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">URL:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="100" name="pst_url" placeholder="Example: leaherynramsier.com" />
+												<input type="text" class="form-control" maxlength="100" name="pst_url" value="<?php echo $result['pst_url']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">YTD Sales:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="11" name="pst_ytd_sales" placeholder="Example: 100.00 (no other characters)" />
+												<input type="text" class="form-control" maxlength="11" name="pst_ytd_sales" value="<?php echo $result['pst_ytd_sales']; ?>" />
 										</div>
 								</div>
 
 								<div class="form-group">
 										<label class="col-sm-3 control-label">Notes:</label>
 										<div class="col-sm-5">
-												<input type="text" class="form-control" maxlength="255" name="pst_notes" />
+												<input type="text" class="form-control" maxlength="255" name="pst_notes" value="<?php echo $result['pst_notes']; ?>" />
 										</div>
 								</div>
 
+								<?php
+								$result = $statement->fetch();
+								}
+								$db = null;
+								?>
+
 								<div class="form-group">
 										<div class="col-sm-9 col-sm-offset-3">
-												<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
+												<button type="submit" class="btn btn-primary" name="edit" value="edit">Update</button>
 										</div>
 								</div>
+
+
+
 						</form>
 					</div>
 			</div>
@@ -151,7 +181,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	$('#add_store_form').formValidation({
+	$('#edit_petstore').formValidation({
 			message: 'This value is not valid',
 			icon: {
 					valid: 'fa fa-check',

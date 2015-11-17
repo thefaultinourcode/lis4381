@@ -9,10 +9,8 @@ error_reporting(E_ALL);
 //exit(print_r($_POST));
  
 
-
+$pst_id_v = $_POST['pst_id'];
 $pst_name_v = $_POST['pst_name'];
-echo $pst_name_v;
-
 $pst_street_v = $_POST['pst_street'];
 $pst_city_v = $_POST['pst_city'];
 $pst_state_v = $_POST['pst_state'];
@@ -25,18 +23,11 @@ $pst_notes_v = $_POST['pst_notes'];
 
 //var_dump($_POST);
 
-echo $pst_street_v;
-echo $pst_city_v;
-echo $pst_state_v;
-echo $pst_zip_v;
-echo $pst_phone_v;
-echo $pst_email_v;
-echo $pst_url_v;
-echo $pst_ytd_sales_v;
-echo $pst_notes_v;
+
 
 $pattern='/^[a-zA-Z0-9,\s\.]+$/';
 $valid_street = preg_match($pattern, $pst_street_v);
+
 
 $pattern='/^[a-zA-Z\s]+$/';
 $valid_city = preg_match($pattern, $pst_city_v);
@@ -70,7 +61,6 @@ empty($pst_email_v) ||
 empty($pst_url_v) ||
 !isset($pst_ytd_sales_v)
 	)
-
 {
 	$error = "All fields require data, except <b>Notes</b>. Check all fields and try again.";
 	include('global/error.php');
@@ -146,30 +136,42 @@ else if($valid_city === 0)
 
 else
 {
-require_once('global/connection.php');
+	require_once('global/connection.php');
 
-$query = 
-"INSERT INTO petstore
-(pst_name, pst_street, pst_city, pst_state,pst_zip,pst_phone,pst_email,pst_url,pst_ytd_sales,pst_notes)
-VALUES(:pst_name_v, :pst_street_v, :pst_city_v, :pst_state_v, :pst_zip_v, :pst_phone_v, :pst_email_v, :pst_url_v, :pst_ytd_sales_v, :pst_notes_v)";
+$query =
+	"UPDATE petstore
+	SET 
+	 pst_name  = :pst_name_p,
+	 pst_street = :pst_street_p,
+	 pst_city = :pst_city_p,
+	 pst_state = :pst_state_p,
+	 pst_zip = :pst_zip_p,
+	 pst_phone = :pst_phone_p,
+	 pst_email = :pst_email_p,
+	 pst_url = :pst_url_p,
+	 pst_ytd_sales = :pst_ytd_sales_p,
+	 pst_notes = :pst_notes_p
+	WHERE pst_id = :pst_id_p;";
 
+	//exit($query);
 try
 {
 	$statement = $db->prepare($query);
-	$statement->bindParam(':pst_name_v',$pst_name_v);
-	$statement->bindParam(':pst_street_v',$pst_street_v);
-	$statement->bindParam(':pst_city_v',$pst_city_v);
-	$statement->bindParam(':pst_state_v',$pst_state_v);
-	$statement->bindParam(':pst_zip_v',$pst_zip_v);
-	$statement->bindParam(':pst_phone_v',$pst_phone_v);
-	$statement->bindParam(':pst_email_v',$pst_email_v);
-	$statement->bindParam(':pst_url_v',$pst_url_v);
-	$statement->bindParam(':pst_ytd_sales_v',$pst_ytd_sales_v);
-	$statement->bindParam(':pst_notes_v',$pst_notes_v);
-	$statement->execute();
+	$statement->bindParam(':pst_id_p', $pst_id_v);
+	$statement->bindParam(':pst_name_p', $pst_name_v);
+	$statement->bindParam(':pst_street_p', $pst_street_v);
+	$statement->bindParam(':pst_city_p', $pst_city_v);
+	$statement->bindParam(':pst_state_p', $pst_state_v);
+	$statement->bindParam(':pst_zip_p', $pst_zip_v);
+	$statement->bindParam(':pst_phone_p', $pst_phone_v);
+	$statement->bindParam(':pst_email_p', $pst_email_v);
+	$statement->bindParam(':pst_url_p', $pst_url_v);
+	$statement->bindParam(':pst_ytd_sales_p', $pst_ytd_sales_v);
+	$statement->bindParam(':pst_notes_p', $pst_notes_v);
+	$row_count = $statement->execute();
 	$statement->closeCursor();
 
-	$last_auto_increment_id = $db->lastInsertId();
+	//exit($row_count);
 }
 
 catch (PDOException $e){

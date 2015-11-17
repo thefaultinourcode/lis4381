@@ -31,8 +31,8 @@ catch (PDOException $e)
 	//after testing, create custom error message
   //echo $e->getMessage();  //display error on this page
   $error = $e->getMessage(); 
-  include('error.php'); //display in custom error page (forwarding is faster, one trip to server)
-	//header('Location: error.php'); //sometimes, redirecting is needed (two trips to server)
+	//include('error.php'); //display in custom error page (forwarding is faster, one trip to server)
+	header('Location: error.php'); //sometimes, redirecting is needed (two trips to server)
   exit();
 }
 ?>

@@ -3,12 +3,15 @@
 
 ###LIS4381 Mobile Apps fall15 a4
 ###Leah Ramsier
-###Deliverables: A4 requirements
+###Deliverables: A5 requirements
 
 1. Display petstore records locally and remotely
-2. Ability to add petstore record to database
+2. Ability to add petstore records to database
 3. Server-side data validation
+4. Processes edits to records in petstore
+5. Allows users to delete records in petstore
 
-[My Website A4](http://leaherynramsier.com/lis4381/a4/index.php)
+
+[My Website A5](http://leaherynramsier.com/lis4381/a5/index.php)
 
 
