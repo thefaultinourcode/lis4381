@@ -71,6 +71,10 @@ class Person{
 		$this->lname = $newLname;
 	}
 	
+	public function SetAge ($newAge){
+		$this->age = $newAge;
+	}
+
 	//GetFname 
 	public function GetFname(){
 		return $this->fname;
@@ -80,14 +84,19 @@ class Person{
 		return $this->lname;
 	}
 
-	public function __construct($newFname="Emma", $newLname="Woodhouse"){
+	public function GetAge(){
+		return $this->age;
+	}
+
+	public function __construct($newFname="Emma", $newLname="Woodhouse", $newAge="25"){
 		$this->fname = $newFname;
 		$this->lname = $newLname;	
-		echo "Creating <strong>" . $this->fname . " " . $this->lname . " </strong> person object from parameterized constructors <br/>";	
+		$this->age = $newAge;
+		echo "Creating <strong>" . $this->fname . " " . $this->lname . " " . $this->age . " </strong> person object from parameterized constructors <br/>";	
 	}
 
 	public function __destruct(){
-		echo "Destroying <strong> " . $this->fname . " " . $this->lname . " </strong> person object <br/>";
+		echo "Destroying <strong> " . $this->fname . " " . $this->lname . " " . $this->age . " </strong> person object <br/>";
 	}
 
 }

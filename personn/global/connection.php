@@ -6,7 +6,7 @@ $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 //example:
 if ($IP=="local")
 {
-	$dsn = 'mysql:host=localhost;port=3306;dbname=ler13c';
+	$dsn = 'mysql:host=localhost;port=3306;dbname=people';
 	$username = 'root';
 	$password = 'mysql';
 }
@@ -14,7 +14,7 @@ if ($IP=="local")
 //contact your Web host for DB connection documentation
 else
 {
-	$dsn = 'mysql:host=localhost;port=3306;dbname=ler13c';
+	$dsn = 'mysql:host=localhost;port=3306;dbname=people';
 	$username = 'ler13c';
 	$password = 'password';
 }

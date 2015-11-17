@@ -1,6 +1,6 @@
 <?php
 //comment out next line if using on remote host
-//$IP="local";
+$IP="local";
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 //example:

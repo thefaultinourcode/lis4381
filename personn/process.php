@@ -22,6 +22,18 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 */
 ?>
 
+<?php
+//database connection code goes here...
+require_once "global/connection.php";
+
+$query = "SELECT * FROM person ORDER BY lname";
+
+$statement = $db->prepare($query);
+$statement->execute();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,7 +82,7 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 <?php
 	include_once('person.php');
 	$default = new Person();
-	$userp = new Person($fname, $lname);
+	$userp = new Person($fname, $lname, $age);
 	//echo "<p>Creating " . "<strong>" . $fname . " " . $lname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
 	$dfname = $default->getFname();
 	$dlname = $default->getLname();
@@ -78,32 +90,75 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 	//echo "<br>";
 ?>
 	
+<?php
+
+require_once('global/connection.php');
+
+$query = 
+"INSERT INTO person
+(lname, fname, age)
+VALUES(:lname, :fname, :age)";
+
+try
+{
+	$statement = $db->prepare($query);
+	$statement->bindParam(':lname',$lname);
+	$statement->bindParam(':fname',$fname);
+	$statement->bindParam(':age',$age);
+	$statement->execute();
+	$statement->closeCursor();
+
+	$last_auto_increment_id = $db->lastInsertId();
+}
+
+catch (PDOException $e){
+	$error = $e->getMessage();
+	echo $error;
+}
+
+//header('Location: index.php');
+
+?>
+
 		
-<div class="table-responsive">
+ <div class="table-responsive">
 	 <table id="myTable" class="table table-striped table-condensed" >
 
 		 <!-- Code displaying PetStore data with Edit/Delete buttons goes here // -->
 	<thead>
 		<tr>
-		<th>First Name</th>
 		<th>Last Name</th>
+		<th>First Name</th>
+		<th>Age</th>
+		<th>id</th>
 		<th>&nbsp;</th>
 		<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<?php
+	$result = $statement->fetch();
+	while($result != null)
+	{
 ?>
-	<tr>
-	<td><?php echo $default->GetFname(); ?></td>
-	<td><?php echo $default->GetLname(); ?></td>
 
-	</tr>
-	<tr><td><?php echo $userp->GetFname(); ?></td>
-	<td><?php echo $userp->GetLname(); ?></td></tr>
+	<td><?php echo htmlspecialchars($result['lname']); ?></td>
+	<td><?php echo htmlspecialchars($result['fname']); ?></td>
+	<td><?php echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo htmlspecialchars($result['per_id']); ?></td>
 
 
+
+</tr>
+
+<?php
+	$result = $statement->fetch();
+}
+$statement->closeCursor();
+$db = null;
+
+?>
 	 </table>
- </div>
+ </div> <!-- end table-responsive -->
 
 
 
@@ -111,6 +166,36 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 
 		</div> <!-- starter-template -->
     </div> <!-- end container -->
+
+	<!-- Bootstrap JavaScript
+	================================================== -->
+	<!-- Placed at end of document so pages load faster -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+			<script>
+	 $(document).ready(function(){
+		 $('#myTable').DataTable({
+	 //permit sorting (i.e., no sorting on last two columns: delete and edit)
+    "columns":
+		[
+      null,
+      null,
+		null,
+		null,
+		null,
+		null,
+     { "orderable": false },
+     { "orderable": false }			
+    ]
+		 });
+});
+	</script>
 
     <!-- Bootstrap core JavaScript: jQuery necessary for Bootstrap's JavaScript plugins
     ================================================== -->

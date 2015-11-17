@@ -11,7 +11,7 @@
 	<meta name="author" content="Leah Ramsier">
 	<link rel="icon" href="favicon.ico">
 
-	<title>LIS4381 - Project1</title>
+	<title>LIS4381 - Assignment 4</title>
 
 <!-- Include FontAwesome CSS to use feedback icons provided by FontAwesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

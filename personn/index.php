@@ -90,7 +90,7 @@ include_once("person.php");
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="age">Age:</label>
 						<div class="col-sm-10">
-							<input type="number" class="form-control" name="age" id="age" placeholder="age">
+							<input type="number" class="form-control" name="age" id="age" placeholder="Enter age">
 						</div>
 					</div>
 
