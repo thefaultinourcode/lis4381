@@ -118,7 +118,7 @@ catch (PDOException $e){
 
 ?>
 
-
+		
  <div class="table-responsive">
 	 <table id="myTable" class="table table-striped table-condensed" >
 
@@ -128,45 +128,41 @@ catch (PDOException $e){
 		<th>Last Name</th>
 		<th>First Name</th>
 		<th>Age</th>
-		
+		<th>id</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
 		</tr>
 	</thead>
-
-	<?php /* 
+	<?php
 	$result = $statement->fetch();
 	while($result != null)
-	
 	{
-	*/
 ?>
-<tr>
-	<td><?php echo $default->getLname(); //echo htmlspecialchars($result['lname']); ?></td>
-	<td><?php echo $default->getFname();//echo htmlspecialchars($result['fname']); ?></td>
-	<td><?php echo $default->getAge();//echo htmlspecialchars($result['age']); ?></td>
-</tr>
 
-<tr>
-	<td><?php echo htmlspecialchars($userp->getLname()); //echo htmlspecialchars($result['lname']); ?></td>
-	<td><?php echo htmlspecialchars($userp->getFname()); //echo htmlspecialchars($result['fname']); ?></td>
-	<td><?php echo htmlspecialchars($userp->getAge());//echo htmlspecialchars($result['age']); ?></td>
-</tr>
+	<td><?php echo htmlspecialchars($result['lname']); ?></td>
+	<td><?php echo htmlspecialchars($result['fname']); ?></td>
+	<td><?php echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo htmlspecialchars($result['per_id']); ?></td>
 
+
+
+</tr>
 
 <?php
-/*
 	$result = $statement->fetch();
 }
 $statement->closeCursor();
 $db = null;
-*/
+
 ?>
 	 </table>
  </div> <!-- end table-responsive -->
 
 
+
   <?php include_once "global/footer.php"; ?>
 
-</div> <!-- starter-template -->
+		</div> <!-- starter-template -->
     </div> <!-- end container -->
 
 	<!-- Bootstrap JavaScript
@@ -184,12 +180,17 @@ $db = null;
 	 $(document).ready(function(){
 		 $('#myTable').DataTable({
 	 //permit sorting (i.e., no sorting on last two columns: delete and edit)
-   "columns":
+    "columns":
 		[
       null,
       null,
 		null,
-		null,		
+		null,
+		null,
+		null,
+     { "orderable": false },
+     { "orderable": false }			
+    ]
 		 });
 });
 	</script>

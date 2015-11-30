@@ -9,6 +9,9 @@
   $fname = $_POST['fname'];
   $lname = $_POST['lname'];
   $age = $_POST['age'];
+  $ssn = $_POST['ssn'];
+  $sex = $_POST['sex'];
+//var_dump($_POST);
 
 require_once "global/connection.php";
 
@@ -79,11 +82,15 @@ Best practice: sanitize input - prepared statements, and escape output -htmlspec
 
 <?php
 	include_once('person.php');
-	$default = new Person();
-	$userp = new Person($fname, $lname, $age);
+
+	$default = new Employee();
+	$userp = new Employee($fname, $lname, $age, $ssn, $sex);
 	//echo "<p>Creating " . "<strong>" . $fname . " " . $lname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
 	$dfname = $default->getFname();
 	$dlname = $default->getLname();
+	$dage = $default->getAge();
+	$dssn = $default->getSSN();
+	$dsex = $default->getSex();
 	//echo "<p>Creating " . "<strong>" . $dfname . " " . $dlname . "</strong> " . "person object from parameterized constructors (accepts two arguemnts).</p>";
 	//echo "<br>";
 ?>
@@ -128,6 +135,8 @@ catch (PDOException $e){
 		<th>Last Name</th>
 		<th>First Name</th>
 		<th>Age</th>
+		<th>SSN</th>
+		<th>Gender</th>
 		
 		</tr>
 	</thead>
@@ -143,12 +152,16 @@ catch (PDOException $e){
 	<td><?php echo $default->getLname(); //echo htmlspecialchars($result['lname']); ?></td>
 	<td><?php echo $default->getFname();//echo htmlspecialchars($result['fname']); ?></td>
 	<td><?php echo $default->getAge();//echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo $dssn;//echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo $dsex;//echo htmlspecialchars($result['age']); ?></td>
 </tr>
 
 <tr>
 	<td><?php echo htmlspecialchars($userp->getLname()); //echo htmlspecialchars($result['lname']); ?></td>
 	<td><?php echo htmlspecialchars($userp->getFname()); //echo htmlspecialchars($result['fname']); ?></td>
 	<td><?php echo htmlspecialchars($userp->getAge());//echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo htmlspecialchars($userp->getSSN());//echo htmlspecialchars($result['age']); ?></td>
+	<td><?php echo htmlspecialchars($userp->getSex());//echo htmlspecialchars($result['age']); ?></td>
 </tr>
 
 
@@ -188,6 +201,8 @@ $db = null;
 		[
       null,
       null,
+		null,
+		null,
 		null,
 		null,		
 		 });
