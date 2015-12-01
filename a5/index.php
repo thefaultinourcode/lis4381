@@ -18,7 +18,7 @@ $statement->execute();
 	<meta name="author" content="Mark K. Jowett, Ph.D.">
 	<link rel="icon" href="favicon.ico">
 
-	<title>LIS4381 - Assignment4</title>
+	<title>LIS4381 - Assignment 5</title>
 
 <!-- Include FontAwesome CSS to use feedback icons provided by FontAwesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">

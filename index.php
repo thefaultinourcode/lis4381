@@ -63,6 +63,7 @@ h2
 						<div class="page-header">
 							<?php include_once("global/header.php"); ?>	
 
+<!--
 <h2>Calculator</h2>
 				<form class="form-horizontal" role="form" method="post" action="process.php">
 
@@ -93,7 +94,7 @@ h2
 						</div>
 						</div>
 
-			
+			-->
 				<!-- End form-building -->
 
 <!-- Start Bootstrap Carousel  -->
