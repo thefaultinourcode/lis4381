@@ -12,6 +12,6 @@
 5. Allows users to delete records in petstore
 6. Uses functions to accomplish these
 
-[My Website P2](http://leaherynramsier.com/lis4381/p2/index.php)
-[Image Carousel](http://leaherynramsier.com/lis4381/index.php)
+#[My Website P2](http://leaherynramsier.com/lis4381/p2/index.php)
+#[Image Carousel](http://leaherynramsier.com/lis4381/index.php)
 
