@@ -21,7 +21,6 @@ $pst_url_v = $_POST['pst_url'];
 $pst_ytd_sales_v = $_POST['pst_ytd_sales'];
 $pst_notes_v = $_POST['pst_notes'];
 
-//var_dump($_POST);
 
 
 
@@ -141,16 +140,17 @@ else
 	require_once 'global/functions.php';
 
 edit_petstore(
-	 pst_name_v,
-	 pst_street_v, 
-	 pst_city_v,
-	 pst_state_v,
-	 pst_zip_v,
-	 pst_phone_v,
-	 pst_email_v,
-	 pst_url_v,
-	 pst_ytd_sales_v,
-	 pst_notes_v
+	 $pst_id_v,
+	 $pst_name_v,
+	 $pst_street_v, 
+	 $pst_city_v,
+	 $pst_state_v,
+	 $pst_zip_v,
+	 $pst_phone_v,
+	 $pst_email_v,
+	 $pst_url_v,
+	 $pst_ytd_sales_v,
+	 $pst_notes_v
 );
 
 

@@ -97,7 +97,9 @@ catch (PDOException $e){
 }
 
   //edit petstore
-function edit_petstore($pst_name_v,
+function edit_petstore(
+	$pst_id_v,
+	$pst_name_v,
 	$pst_street_v,
 	$pst_city_v,
 	$pst_state_v,
@@ -123,7 +125,7 @@ function edit_petstore($pst_name_v,
 	 pst_url = :pst_url_p,
 	 pst_ytd_sales = :pst_ytd_sales_p,
 	 pst_notes = :pst_notes_p
-	WHERE pst_id = :pst_id_p;";
+	WHERE pst_id = :pst_id_p";
 
 	//exit($query);
 try
