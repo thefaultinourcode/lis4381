@@ -120,26 +120,26 @@ h2
           <div class="active item">
                 <h2>Slide 1</h2>
                 <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						 <img src="images/slide1.png" alt="Slide 1">
+                  <h3>ERD for Petstore Database</h3>
+                  <p>ERD of database I worked with in my Mobile Applications class.</p>
+						 <img src="images/a3.png" alt="Slide 1">
                 </div>
             </div>
 
             <div class="item">
                 <h2>Slide 2</h2>                <div class="carousel-caption">
-                  <h3>Second slide label</h3>
-                  <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-						 <img src="images/slide2.png" alt="Slide 2">									
+                  <h3>ERD of Database Project</h3>
+                  <p>An ERD of a project for a database class</p>
+						 <img src="images/image2.png" alt="Slide 2">									
                 </div>
             </div>
 
             <div class="item">
                 <h2>Slide 3</h2>
                 <div class="carousel-caption">
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-						 <img src="images/slide3.png" alt="Slide 3">									
+                  <h3>Presenting Undergraduate Research</h3>
+                  <p>A picture of my project presentation for FSU's Undergraduate Research Opportunity Program</p>
+						 <img src="images/slide3.jpeg" alt="Slide 3">									
                 </div>
             </div>
 
@@ -154,7 +154,7 @@ h2
     </div>
 </div>
 <!-- End Bootstrap Carousel  -->
--->
+
 
 <?php
 include_once "global/footer.php";
