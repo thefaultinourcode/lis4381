@@ -4,6 +4,19 @@
 <head>
   <meta charset="utf-8">
   <title>Using RSS Feeds</title>
+<!-- Include FontAwesome CSS to use feedback icons provided by FontAwesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- Bootstrap for responsive, mobile-first design. -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Note: following file is for form validation. -->
+<link rel="stylesheet" href="css/formValidation.min.css"/>
+
+<!-- Starter template for your own custom styling. -->
+<link href="css/starter-template.css" rel="stylesheet">
+
 </head>
 <body>
 <?php
