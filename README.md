@@ -1,7 +1,6 @@
-- remove *all* "_student" references in file/directory names
 
-**For example:**
-    - a2_student_files becomes a2
-    - css_student_files becomes css
-    - global_student_files becomes global
-    - etc.
+
+###LIS4381 Mobile Apps Fall15
+###Leah Ramsier
+
+[The web app I created for this class](http://leaherynramsier.com/lis4381)
